@@ -4,7 +4,8 @@ from . import views
 urlpatterns=[
     url(r'^$',views.post_list,name='post_list'),
     url(r'^post/(?P<pk>[0-9]+)/$',views.post_detail,name='post_detail'), #(?P<pk>[0-9]+) this matches any numbers not letters,
-                                                                         #and Django will take everything that you place here and transfer it to a view as a
+    url(r'^post/new/$',views.post_new,name='post_new'),
+    url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),                                                                    #and Django will take everything that you place here and transfer it to a view as a
                                                                          #variable called 'pk'
 ]
 #That means if you enter http://127.0.0.1:8000/post/5/ into your browser,
